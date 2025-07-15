@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LeanCameraLocate : MonoBehaviour
+    public class LsLeanCameraLocate : MonoBehaviour
     {
         public bool _ignoreIfStartedOverGui = true;
 

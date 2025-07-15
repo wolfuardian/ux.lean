@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LeanCameraRotate : MonoBehaviour
+    public class LsLeanCameraRotate : MonoBehaviour
     {
         public bool _ignoreIfStartedOverGui = true;
 
@@ -44,32 +44,35 @@ namespace Eos.Ux.Lean
 
         protected virtual void LateUpdate()
         {
-            var fingers = LeanTouch.GetFingers(_ignoreIfStartedOverGui, _ignoreIfOverGui, _requiredFingerCount);
-
-            var drag = LeanGesture.GetScaledDelta(fingers);
-
-            var sensitivity = GetSensitivity();
-
-            _x += drag.y * _xSensitivity * sensitivity;
-
-            if (_xClamp)
+            if (_camera)
             {
-                _x = Mathf.Clamp(_x, _xMin, _xMax);
+                var fingers = LeanTouch.GetFingers(_ignoreIfStartedOverGui, _ignoreIfOverGui, _requiredFingerCount);
+
+                var drag = LeanGesture.GetScaledDelta(fingers);
+
+                var sensitivity = GetSensitivity();
+
+                _x += drag.y * _xSensitivity * sensitivity;
+
+                if (_xClamp)
+                {
+                    _x = Mathf.Clamp(_x, _xMin, _xMax);
+                }
+
+                _y -= drag.x * _ySensitivity * sensitivity;
+
+                if (_yClamp)
+                {
+                    _y = Mathf.Clamp(_y, _yMin, _yMax);
+                }
+
+                if (_zClamp)
+                {
+                    _z = Mathf.Clamp(_z, _zMin, _zMax);
+                }
+
+                UpdateRotation();
             }
-
-            _y -= drag.x * _ySensitivity * sensitivity;
-
-            if (_yClamp)
-            {
-                _y = Mathf.Clamp(_y, _yMin, _yMax);
-            }
-
-            if (_zClamp)
-            {
-                _z = Mathf.Clamp(_z, _zMin, _zMax);
-            }
-
-            UpdateRotation();
         }
 
         private float GetSensitivity()

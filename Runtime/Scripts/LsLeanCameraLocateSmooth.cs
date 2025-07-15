@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
-    public class LsLeanCameraLocateSmooth : LeanCameraLocate
+    public class LsLeanCameraLocateSmooth : LsLeanCameraLocate
     {
-        [Space(10.0f)] public float _dampening = 10.0f;
+        [Space(10.0f)] public float _dampening = 6.0f;
 
         private Vector3 _currentLocate;
 
