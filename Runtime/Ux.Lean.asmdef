@@ -1,0 +1,14 @@
+{
+    "name": "Ux.Lean",
+    "rootNamespace": "",
+    "references": ["GUID:637dfb2b87b2cf0499a8da5b0b91da54","GUID:82c7e6eac44d7e048b22ad98800dcfc7","GUID:688cfbbe2a536604ab4aa06ececa1da3"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
