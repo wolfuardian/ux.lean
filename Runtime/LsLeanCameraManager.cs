@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
@@ -18,14 +17,10 @@ namespace Eos.Ux.Lean
         [SerializeField] private Camera _camera;
         [SerializeField] private LsLeanPointOfView _lsLeanPointOfViewOnStart;
 
-        private Transform _lookTarget = null;
         private Vector3 _lookLocate = new Vector3(0f, 0f, 0f);
         private float _lookDistance = 90f;
         private Vector3 _lookEulerAngle = new Vector3(15f, -30f, 0f);
         private float _lookZoom = 50f;
-
-        private float _currentTurntableSpeed;
-        private bool _isTurntableActive;
 
         private LeanCameraLocateSettings _storedLocateSettings = new LeanCameraLocateSettings();
         private LeanCameraRotateSettings _storedRotateSettings = new LeanCameraRotateSettings();
@@ -162,7 +157,6 @@ namespace Eos.Ux.Lean
 
         public void LookAtTarget(Transform target, float distance, Vector3 eulerAngle, float zoom)
         {
-            _lookTarget = target;
             _lookLocate = target.position;
             _lookDistance = distance;
             _lookEulerAngle = eulerAngle;
@@ -221,31 +215,12 @@ namespace Eos.Ux.Lean
             }
         }
 
-        public void StartTurntable(float targetSpeed)
-        {
-            _isTurntableActive = true;
-            StopAllCoroutines();
-            StartCoroutine(AccelTurnSpeedToTarget(targetSpeed, 5f));
-        }
-
-        public void StopTurntable()
-        {
-            _isTurntableActive = false;
-            StopAllCoroutines();
-            StartCoroutine(AccelTurnSpeedToZero(5f));
-        }
-
         private void Start()
         {
             if (_lsLeanPointOfViewOnStart)
             {
                 LookAtTarget(_lsLeanPointOfViewOnStart);
             }
-        }
-
-        private void FixedUpdate()
-        {
-            _lsLeanCameraRotate._y += _currentTurntableSpeed * Time.deltaTime;
         }
 
         private void SetLookAtMode(bool active)
@@ -271,24 +246,6 @@ namespace Eos.Ux.Lean
             else
             {
                 SetFreeMode(false);
-            }
-        }
-
-        private IEnumerator AccelTurnSpeedToTarget(float targetSpeed, float acceleration)
-        {
-            while (Mathf.Abs(_currentTurntableSpeed - targetSpeed) > 0.01f)
-            {
-                _currentTurntableSpeed = Mathf.MoveTowards(_currentTurntableSpeed, targetSpeed, acceleration * Time.deltaTime);
-                yield return null;
-            }
-        }
-
-        private IEnumerator AccelTurnSpeedToZero(float acceleration)
-        {
-            while (Mathf.Abs(_currentTurntableSpeed) > 0.01f)
-            {
-                _currentTurntableSpeed = Mathf.MoveTowards(_currentTurntableSpeed, 0f, acceleration * Time.deltaTime);
-                yield return null;
             }
         }
     }
