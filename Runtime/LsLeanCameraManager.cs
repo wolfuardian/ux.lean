@@ -227,7 +227,6 @@ namespace Eos.Ux.Lean
         {
             if (active)
             {
-                SetFreeMode(true);
                 _lsLeanCameraLocate._x = _lookLocate.x;
                 _lsLeanCameraLocate._y = _lookLocate.y;
                 _lsLeanCameraLocate._z = _lookLocate.z;
@@ -242,10 +241,6 @@ namespace Eos.Ux.Lean
                 );
                 _lsLeanCameraZoom._zoom = _lookZoom;
                 _camera.fieldOfView = _lookZoom;
-            }
-            else
-            {
-                SetFreeMode(false);
             }
         }
     }
