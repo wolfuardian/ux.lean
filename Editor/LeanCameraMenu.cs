@@ -36,6 +36,8 @@ namespace Eos.Ux.Lean.Editor
             var spawnPos = SceneView.lastActiveSceneView?.camera?.transform.position ?? Vector3.zero;
             rootGo.transform.position = spawnPos + Vector3.forward * 5f;
 
+            cameraGo.tag = "MainCamera";
+
             SetupLocate(locateGo, camera);
             SetupRotate(rotateGo, camera);
             SetupZ(zGo);
