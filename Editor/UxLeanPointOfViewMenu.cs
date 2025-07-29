@@ -5,7 +5,7 @@ namespace Eos.Ux.Lean.Editor
 {
     public static class UxLeanPointOfViewMenu
     {
-        [MenuItem("GameObject/UX Lean/LeanPointOfView", false, 2)]
+        [MenuItem("GameObject/Eos Collection/UX Lean/LeanPointOfView", false, 3)]
         public static void CreateLeanPointOfViewHierarchy()
         {
             var povGo = new GameObject("new POV");
