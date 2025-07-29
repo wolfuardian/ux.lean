@@ -52,7 +52,7 @@ namespace Eos.Ux.Lean
             #if UNITY_2022_1_OR_NEWER
             var povs = FindObjectsByType<UxLeanPointOfView>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             #else
-            var povs = FindObjectsOfType<LsLeanPointOfView>();
+            var povs = FindObjectsOfType<UxLeanPointOfView>();
             #endif
             return povs.Any(pov => pov.Bookmark == baseBookmark);
         }
