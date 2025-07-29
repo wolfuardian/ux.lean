@@ -6,13 +6,13 @@ namespace Eos.Ux.Lean.Editor
 {
     public static class LeanCameraMenu
     {
-        [MenuItem("GameObject/Eos UX/Lean/LeanCamera (Dolly)", false, 1)]
+        [MenuItem("GameObject/UX Lean/LeanCamera (Dolly)", false, 1)]
         public static void CreateLeanCameraDollyHierarchy()
         {
             CreateLeanCamera((int)LsLeanCameraManager.CameraMode.Dolly);
         }
 
-        [MenuItem("GameObject/Eos UX/Lean/LeanCamera (Zoom)", false, 1)]
+        [MenuItem("GameObject/UX Lean/LeanCamera (Zoom)", false, 1)]
         public static void CreateLeanCameraZoomHierarchy()
         {
             CreateLeanCamera((int)LsLeanCameraManager.CameraMode.Zoom);
