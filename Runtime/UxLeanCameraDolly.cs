@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LsLeanCameraDolly : MonoBehaviour
+    public class UxLeanCameraDolly : MonoBehaviour
     {
         public bool _ignoreIfStartedOverGui = true;
 

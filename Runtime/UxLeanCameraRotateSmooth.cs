@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LsLeanCameraRotateSmooth : LsLeanCameraRotate
+    public class UxLeanCameraRotateSmooth : UxLeanCameraRotate
     {
         [Space(10.0f)] public float _dampening = 3.0f;
 

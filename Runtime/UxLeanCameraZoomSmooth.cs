@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LsLeanCameraZoomSmooth : LsLeanCameraZoom
+    public class UxLeanCameraZoomSmooth : UxLeanCameraZoom
     {
         public float _dampening = 10.0f;
 

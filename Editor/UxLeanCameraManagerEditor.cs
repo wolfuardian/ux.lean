@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
-    [CustomEditor(typeof(LsLeanCameraManager))]
+    [CustomEditor(typeof(UxLeanCameraManager))]
     [CanEditMultipleObjects]
-    public class LsLeanCameraManagerEditor : UnityEditor.Editor
+    public class UxLeanCameraManagerEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
-            var leanCameraManager = (LsLeanCameraManager)target;
+            var leanCameraManager = (UxLeanCameraManager)target;
 
             DrawDefaultInspector();
             

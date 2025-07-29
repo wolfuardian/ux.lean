@@ -4,23 +4,23 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean.Editor
 {
-    public static class LeanCameraMenu
+    public static class UxLeanCameraMenu
     {
         [MenuItem("GameObject/UX Lean/LeanCamera (Dolly)", false, 1)]
         public static void CreateLeanCameraDollyHierarchy()
         {
-            CreateLeanCamera((int)LsLeanCameraManager.CameraMode.Dolly);
+            CreateLeanCamera((int)UxLeanCameraManager.CameraMode.Dolly);
         }
 
         [MenuItem("GameObject/UX Lean/LeanCamera (Zoom)", false, 1)]
         public static void CreateLeanCameraZoomHierarchy()
         {
-            CreateLeanCamera((int)LsLeanCameraManager.CameraMode.Zoom);
+            CreateLeanCamera((int)UxLeanCameraManager.CameraMode.Zoom);
         }
 
         public static void CreateLeanCamera(int cameraMode)
         {
-            var cameraModeInfo = cameraMode == (int)LsLeanCameraManager.CameraMode.Dolly ? "(Dolly)" : "(Zoom)";
+            var cameraModeInfo = cameraMode == (int)UxLeanCameraManager.CameraMode.Dolly ? "(Dolly)" : "(Zoom)";
             var rootGo         = new GameObject("new LeanCamera " + cameraModeInfo);
             var locateGo       = new GameObject("Locate");
             var rotateGo       = new GameObject("Rotate");
@@ -52,11 +52,11 @@ namespace Eos.Ux.Lean.Editor
 
             switch (cameraMode)
             {
-                case (int)LsLeanCameraManager.CameraMode.Dolly:
-                    rootGo.GetComponent<LsLeanCameraManager>().SwitchCameraMode((int)LsLeanCameraManager.CameraMode.Dolly);
+                case (int)UxLeanCameraManager.CameraMode.Dolly:
+                    rootGo.GetComponent<UxLeanCameraManager>().SwitchCameraMode((int)UxLeanCameraManager.CameraMode.Dolly);
                     break;
-                case (int)LsLeanCameraManager.CameraMode.Zoom:
-                    rootGo.GetComponent<LsLeanCameraManager>().SwitchCameraMode((int)LsLeanCameraManager.CameraMode.Zoom);
+                case (int)UxLeanCameraManager.CameraMode.Zoom:
+                    rootGo.GetComponent<UxLeanCameraManager>().SwitchCameraMode((int)UxLeanCameraManager.CameraMode.Zoom);
                     break;
             }
         }
@@ -68,7 +68,7 @@ namespace Eos.Ux.Lean.Editor
             leanTouchSimulator.MovePivotKey = KeyCode.LeftAlt;
             leanTouchSimulator.MultiDragKey = KeyCode.Mouse1;
 
-            var lsLeanCameraLocate = locate.AddComponent<LsLeanCameraLocateSmooth>();
+            var lsLeanCameraLocate = locate.AddComponent<UxLeanCameraLocateSmooth>();
             lsLeanCameraLocate._requiredFingerCount = 2;
             lsLeanCameraLocate._x = 0f;
             lsLeanCameraLocate._y = 0f;
@@ -82,7 +82,7 @@ namespace Eos.Ux.Lean.Editor
 
         private static void SetupRotate(GameObject rotate, Camera camera)
         {
-            var lsLeanCameraRotate = rotate.AddComponent<LsLeanCameraRotateSmooth>();
+            var lsLeanCameraRotate = rotate.AddComponent<UxLeanCameraRotateSmooth>();
             lsLeanCameraRotate._requiredFingerCount = 1;
             lsLeanCameraRotate._x = 0f;
             lsLeanCameraRotate._y = 0f;
@@ -98,7 +98,7 @@ namespace Eos.Ux.Lean.Editor
 
         private static void SetupZ(GameObject z)
         {
-            var lsLeanCameraDolly = z.AddComponent<LsLeanCameraDollySmooth>();
+            var lsLeanCameraDolly = z.AddComponent<UxLeanCameraDollySmooth>();
             lsLeanCameraDolly._requiredFingerCount = 1;
             lsLeanCameraDolly._dolly = 150f;
             lsLeanCameraDolly._dollyClamp = true;
@@ -112,7 +112,7 @@ namespace Eos.Ux.Lean.Editor
 
         private static void SetupCamera(Camera camera)
         {
-            var lsLeanCameraZoom = camera.gameObject.AddComponent<LsLeanCameraZoomSmooth>();
+            var lsLeanCameraZoom = camera.gameObject.AddComponent<UxLeanCameraZoomSmooth>();
             lsLeanCameraZoom._requiredFingerCount = 1;
             lsLeanCameraZoom._zoom = 50f;
             lsLeanCameraZoom._zoomClamp = true;
@@ -131,11 +131,11 @@ namespace Eos.Ux.Lean.Editor
         private static void SetupManager(GameObject root, GameObject locate, GameObject rotate, GameObject z, GameObject camera)
         {
             root.transform.position = Vector3.zero;
-            var manager = root.AddComponent<LsLeanCameraManager>();
-            manager.LeanCameraLocate = locate.GetComponent<LsLeanCameraLocateSmooth>();
-            manager.LeanCameraRotate = rotate.GetComponent<LsLeanCameraRotateSmooth>();
-            manager.LeanCameraDolly = z.GetComponent<LsLeanCameraDollySmooth>();
-            manager.LeanCameraZoom = camera.GetComponent<LsLeanCameraZoomSmooth>();
+            var manager = root.AddComponent<UxLeanCameraManager>();
+            manager.LeanCameraLocate = locate.GetComponent<UxLeanCameraLocateSmooth>();
+            manager.LeanCameraRotate = rotate.GetComponent<UxLeanCameraRotateSmooth>();
+            manager.LeanCameraDolly = z.GetComponent<UxLeanCameraDollySmooth>();
+            manager.LeanCameraZoom = camera.GetComponent<UxLeanCameraZoomSmooth>();
             manager.LeanCamera = camera.GetComponent<Camera>();
         }
     }

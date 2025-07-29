@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LsLeanCameraZoom : MonoBehaviour
+    public class UxLeanCameraZoom : MonoBehaviour
     {
         public bool _ignoreIfStartedOverGui = true;
 

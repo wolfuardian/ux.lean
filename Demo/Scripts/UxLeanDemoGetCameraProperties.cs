@@ -3,9 +3,9 @@ using UnityEngine.Events;
 
 namespace Eos.Ux.Lean.Demo
 {
-    public class LsLeanDemoGetCameraProperties : MonoBehaviour
+    public class UxLeanDemoGetCameraProperties : MonoBehaviour
     {
-        [SerializeField] private LsLeanCameraManager _manager;
+        [SerializeField] private UxLeanCameraManager _manager;
 
         [SerializeField] private UnityEvent<string> _onGetLocate = new UnityEvent<string>();
         [SerializeField] private UnityEvent<string> _onGetRotate = new UnityEvent<string>();

@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean.Demo
 {
-    public class LsLeanDemoPointOfView : MonoBehaviour
+    public class UxLeanDemoPointOfView : MonoBehaviour
     {
-        [SerializeField] private LsLeanCameraManager _manager;
-        [SerializeField] private LsLeanPointOfView _pointOfView1;
-        [SerializeField] private LsLeanPointOfView _pointOfView2;
-        [SerializeField] private LsLeanPointOfView _pointOfView3;
+        [SerializeField] private UxLeanCameraManager _manager;
+        [SerializeField] private UxLeanPointOfView _pointOfView1;
+        [SerializeField] private UxLeanPointOfView _pointOfView2;
+        [SerializeField] private UxLeanPointOfView _pointOfView3;
 
         public void SetPovAs(int povIndex)
         {

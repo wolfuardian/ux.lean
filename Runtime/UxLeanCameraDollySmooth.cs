@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LsLeanCameraDollySmooth : LsLeanCameraDolly
+    public class UxLeanCameraDollySmooth : UxLeanCameraDolly
     {
         public float _dampening = 6.0f;
 

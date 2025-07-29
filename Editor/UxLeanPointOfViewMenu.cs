@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean.Editor
 {
-    public static class LeanPointOfViewMenu
+    public static class UxLeanPointOfViewMenu
     {
         [MenuItem("GameObject/UX Lean/LeanPointOfView", false, 2)]
         public static void CreateLeanPointOfViewHierarchy()
@@ -23,13 +23,13 @@ namespace Eos.Ux.Lean.Editor
         {
             const string BASE_NAME = "POV";
 
-            var lsLeanPointOfView = povGo.AddComponent<LsLeanPointOfView>();
+            var lsLeanPointOfView = povGo.AddComponent<UxLeanPointOfView>();
             var index             = 1;
             var bookmark          = BASE_NAME + index;
 
             while (index < 1000)
             {
-                if (!LsLeanPointOfView.BookmarkExists(bookmark))
+                if (!UxLeanPointOfView.BookmarkExists(bookmark))
                 {
                     lsLeanPointOfView.Bookmark = bookmark;
                     break;

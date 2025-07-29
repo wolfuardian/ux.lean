@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Eos.Ux.Lean
 {
     [ExecuteInEditMode]
-    public class LsLeanCameraRotate : MonoBehaviour
+    public class UxLeanCameraLocate : MonoBehaviour
     {
         public bool _ignoreIfStartedOverGui = true;
 
@@ -14,9 +14,11 @@ namespace Eos.Ux.Lean
 
         public Camera _camera;
 
+        public float _distance = 1.0f;
+
         [Space(10.0f)] public float _x;
 
-        public float _xSensitivity = -0.1f;
+        public float _xSensitivity = 10.0f;
 
         public bool _xClamp = true;
 
@@ -26,7 +28,7 @@ namespace Eos.Ux.Lean
 
         [Space(10.0f)] public float _y;
 
-        public float _ySensitivity = -0.1f;
+        public float _ySensitivity = 10.0f;
 
         public bool _yClamp;
 
@@ -36,30 +38,32 @@ namespace Eos.Ux.Lean
 
         [Space(10.0f)] public float _z;
 
+        public float _zSensitivity = 10.0f;
+
         public bool _zClamp;
 
         public float _zMin = -45.0f;
 
         public float _zMax = 45.0f;
 
+        public bool _ignoreSmooth = false;
+
         protected virtual void LateUpdate()
         {
             if (_camera)
             {
                 var fingers = LeanTouch.GetFingers(_ignoreIfStartedOverGui, _ignoreIfOverGui, _requiredFingerCount);
+                
+                var worldDelta = LeanGesture.GetWorldDelta(fingers, _distance, _camera);
 
-                var drag = LeanGesture.GetScaledDelta(fingers);
-
-                var sensitivity = GetSensitivity();
-
-                _x += drag.y * _xSensitivity * sensitivity;
+                _x -= worldDelta.x * _xSensitivity;
+                _y -= worldDelta.y * _ySensitivity;
+                _z -= worldDelta.z * _zSensitivity;
 
                 if (_xClamp)
                 {
                     _x = Mathf.Clamp(_x, _xMin, _xMax);
                 }
-
-                _y -= drag.x * _ySensitivity * sensitivity;
 
                 if (_yClamp)
                 {
@@ -71,23 +75,23 @@ namespace Eos.Ux.Lean
                     _z = Mathf.Clamp(_z, _zMin, _zMax);
                 }
 
-                UpdateRotation();
+                transform.localPosition = new Vector3(_x, _y, _z);
             }
         }
 
-        private float GetSensitivity()
+        public void Tick()
         {
-            if (_camera.orthographic == false)
-            {
-                return _camera.fieldOfView / 90.0f;
-            }
-
-            return 1.0f;
+            LateUpdate();
         }
 
-        private void UpdateRotation()
+        public void DeactivateSmooth()
         {
-            transform.localRotation = Quaternion.Euler(_x, _y, _z);
+            _ignoreSmooth = true;
+        }
+
+        public void ActivateSmooth()
+        {
+            _ignoreSmooth = false;
         }
     }
 }

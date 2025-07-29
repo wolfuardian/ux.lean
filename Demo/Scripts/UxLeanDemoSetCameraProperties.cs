@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean.Demo
 {
-    public class LsLeanDemoSetCameraProperties : MonoBehaviour
+    public class UxLeanDemoSetCameraProperties : MonoBehaviour
     {
-        [SerializeField] private LsLeanCameraManager _manager;
+        [SerializeField] private UxLeanCameraManager _manager;
         [SerializeField] private float _locateXMultiplier = 1f;
         [SerializeField] private float _locateYMultiplier = 1f;
         [SerializeField] private float _locateZMultiplier = 1f;

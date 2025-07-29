@@ -6,10 +6,10 @@ namespace Eos.Ux.Lean
     #if UNITY_EDITOR
     [ExecuteInEditMode]
     #endif
-    public class LsLeanPointOfView : MonoBehaviour
+    public class UxLeanPointOfView : MonoBehaviour
     {
         [SerializeField] private string _bookmark = "View Description";
-        [SerializeField] private LsLeanCameraManager _leanCameraManager;
+        [SerializeField] private UxLeanCameraManager _leanCameraManager;
         [SerializeField] private PovSettings _settings;
 
         [System.NonSerialized]
@@ -27,7 +27,7 @@ namespace Eos.Ux.Lean
             }
         }
 
-        public LsLeanCameraManager LeanCameraManager
+        public UxLeanCameraManager LeanCameraManager
         {
             get
             {
@@ -50,7 +50,7 @@ namespace Eos.Ux.Lean
         public static bool BookmarkExists(string baseBookmark)
         {
             #if UNITY_2022_1_OR_NEWER
-            var povs = FindObjectsByType<LsLeanPointOfView>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            var povs = FindObjectsByType<UxLeanPointOfView>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             #else
             var povs = FindObjectsOfType<LsLeanPointOfView>();
             #endif

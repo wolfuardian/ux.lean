@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
-    [CustomEditor(typeof(LsLeanPointOfView))]
+    [CustomEditor(typeof(UxLeanPointOfView))]
     [CanEditMultipleObjects]
-    public class LsLeanPointOfViewEditor : UnityEditor.Editor
+    public class UxLeanPointOfViewEditor : UnityEditor.Editor
     {
-        private LsLeanPointOfView _leanPointOfView;
+        private UxLeanPointOfView _leanPointOfView;
         private Color _originalColor;
 
         public override void OnInspectorGUI()
         {
-            _leanPointOfView = (LsLeanPointOfView)target;
+            _leanPointOfView = (UxLeanPointOfView)target;
 
             _originalColor = GUI.backgroundColor;
 
@@ -37,7 +37,7 @@ namespace Eos.Ux.Lean
             }
         }
 
-        private void DrawLinkModePanel(LsLeanPointOfViewEditor self)
+        private void DrawLinkModePanel(UxLeanPointOfViewEditor self)
         {
             if (self._leanPointOfView.LeanCameraManager == null)
             {
