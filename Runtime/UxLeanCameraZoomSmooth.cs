@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
+    [AddComponentMenu("UX Lean/UX Lean Camera Zoom Smooth")]
     [ExecuteInEditMode]
     public class UxLeanCameraZoomSmooth : UxLeanCameraZoom
     {

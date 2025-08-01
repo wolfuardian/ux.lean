@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
+    [AddComponentMenu("UX Lean/UX Lean Camera Dolly")]
     [ExecuteInEditMode]
     public class UxLeanCameraDolly : MonoBehaviour
     {

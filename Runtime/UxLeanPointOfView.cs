@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
+    [AddComponentMenu("UX Lean/UX Lean Point of View")]
     #if UNITY_EDITOR
     [ExecuteInEditMode]
     #endif

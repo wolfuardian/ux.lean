@@ -2,6 +2,7 @@
 
 namespace Eos.Ux.Lean
 {
+    [AddComponentMenu("UX Lean/UX Lean Camera Manager")]
     public class UxLeanCameraManager : MonoBehaviour
     {
         public enum CameraMode

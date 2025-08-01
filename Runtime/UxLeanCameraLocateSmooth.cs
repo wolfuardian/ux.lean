@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
+    [AddComponentMenu("UX Lean/UX Lean Camera Locate Smooth")]
     public class UxLeanCameraLocateSmooth : UxLeanCameraLocate
     {
         [Space(10.0f)] public float _dampening = 6.0f;

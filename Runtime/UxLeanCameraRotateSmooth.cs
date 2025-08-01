@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Eos.Ux.Lean
 {
+    [AddComponentMenu("UX Lean/UX Lean Camera Rotate Smooth")]
     [ExecuteInEditMode]
     public class UxLeanCameraRotateSmooth : UxLeanCameraRotate
     {
