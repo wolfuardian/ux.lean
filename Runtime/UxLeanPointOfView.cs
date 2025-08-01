@@ -9,7 +9,6 @@ namespace Eos.Ux.Lean
     public class UxLeanPointOfView : MonoBehaviour
     {
         [SerializeField] private string _bookmark = "View Description";
-        [SerializeField] private UxLeanCameraManager _leanCameraManager;
         [SerializeField] private PovSettings _settings;
 
         [System.NonSerialized]
@@ -17,35 +16,18 @@ namespace Eos.Ux.Lean
 
         public string Bookmark
         {
-            get
-            {
-                return _bookmark;
-            }
-            set
-            {
-                _bookmark = value;
-            }
+            get => _bookmark;
+            set => _bookmark = value;
         }
 
-        public UxLeanCameraManager LeanCameraManager
-        {
-            get
-            {
-                return _leanCameraManager;
-            }
-            set
-            {
-                _leanCameraManager = value;
-            }
-        }
+        private UxLeanCameraManager _leanCameraManager;
+        #if UNITY_2022_1_OR_NEWER
+        private UxLeanCameraManager cachedLeanCameraManager => _leanCameraManager ??= FindAnyObjectByType<UxLeanCameraManager>();
+        #else
+        private UxLeanCameraManager cachedLeanCameraManager => _leanCameraManager ??= FindObjectOfType<UxLeanCameraManager>();
+        #endif
 
-        public PovSettings Settings
-        {
-            get
-            {
-                return _settings;
-            }
-        }
+        public PovSettings Settings => _settings;
 
         public static bool BookmarkExists(string baseBookmark)
         {
@@ -106,7 +88,7 @@ namespace Eos.Ux.Lean
         {
             if (IsLinkModeEnabled)
             {
-                _leanCameraManager.SyncPointOfView(this);
+                cachedLeanCameraManager.SyncPointOfView(this);
             }
         }
 
