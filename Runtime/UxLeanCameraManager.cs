@@ -27,11 +27,11 @@ namespace Eos.Ux.Lean
         private readonly LeanCameraDollySettings _storedDollySettings = new LeanCameraDollySettings();
         private readonly LeanCameraZoomSettings _storedZoomSettings = new LeanCameraZoomSettings();
 
-        public UxLeanCameraLocate LeanCameraLocate { get => _uxLeanCameraLocate; set => _uxLeanCameraLocate = value; }
-        public UxLeanCameraRotate LeanCameraRotate { get => _uxLeanCameraRotate; set => _uxLeanCameraRotate = value; }
-        public UxLeanCameraDolly LeanCameraDolly { get => _uxLeanCameraDolly; set => _uxLeanCameraDolly = value; }
-        public UxLeanCameraZoom LeanCameraZoom { get => _uxLeanCameraZoom; set => _uxLeanCameraZoom = value; }
-        public Camera LeanCamera { get => _camera; set => _camera = value; }
+        public UxLeanCameraLocate leanCameraLocate { get => _uxLeanCameraLocate; set => _uxLeanCameraLocate = value; }
+        public UxLeanCameraRotate leanCameraRotate { get => _uxLeanCameraRotate; set => _uxLeanCameraRotate = value; }
+        public UxLeanCameraDolly leanCameraDolly { get => _uxLeanCameraDolly; set => _uxLeanCameraDolly = value; }
+        public UxLeanCameraZoom leanCameraZoom { get => _uxLeanCameraZoom; set => _uxLeanCameraZoom = value; }
+        public Camera leanCamera { get => _camera; set => _camera = value; }
 
         #region ContextMenu
         [ContextMenu("Copy properties as Settings to JSON")]

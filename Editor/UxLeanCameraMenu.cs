@@ -132,11 +132,11 @@ namespace Eos.Ux.Lean.Editor
         {
             root.transform.position = Vector3.zero;
             var manager = root.AddComponent<UxLeanCameraManager>();
-            manager.LeanCameraLocate = locate.GetComponent<UxLeanCameraLocateSmooth>();
-            manager.LeanCameraRotate = rotate.GetComponent<UxLeanCameraRotateSmooth>();
-            manager.LeanCameraDolly = z.GetComponent<UxLeanCameraDollySmooth>();
-            manager.LeanCameraZoom = camera.GetComponent<UxLeanCameraZoomSmooth>();
-            manager.LeanCamera = camera.GetComponent<Camera>();
+            manager.leanCameraLocate = locate.GetComponent<UxLeanCameraLocateSmooth>();
+            manager.leanCameraRotate = rotate.GetComponent<UxLeanCameraRotateSmooth>();
+            manager.leanCameraDolly = z.GetComponent<UxLeanCameraDollySmooth>();
+            manager.leanCameraZoom = camera.GetComponent<UxLeanCameraZoomSmooth>();
+            manager.leanCamera = camera.GetComponent<Camera>();
         }
     }
 }
