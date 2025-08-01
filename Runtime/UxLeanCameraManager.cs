@@ -173,7 +173,6 @@ namespace Eos.Ux.Lean
         {
             if (active)
             {
-                // Store values to settings
                 _storedLocateSettings._xyzValue = new Vector3(_uxLeanCameraLocate._x, _uxLeanCameraLocate._y, _uxLeanCameraLocate._z);
                 _uxLeanCameraLocate.DeactivateSmooth();
                 _uxLeanCameraLocate._x = _uxLeanCameraZoom.transform.position.x;
@@ -197,7 +196,6 @@ namespace Eos.Ux.Lean
             }
             else
             {
-                // Restore values from settings
                 _uxLeanCameraLocate._x = _storedLocateSettings._xyzValue.x;
                 _uxLeanCameraLocate._y = _storedLocateSettings._xyzValue.y;
                 _uxLeanCameraLocate._z = _storedLocateSettings._xyzValue.z;
