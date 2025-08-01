@@ -31,14 +31,14 @@ namespace Eos.Ux.Lean.Editor
             {
                 if (!UxLeanPointOfView.BookmarkExists(bookmark))
                 {
-                    lsLeanPointOfView.Bookmark = bookmark;
+                    lsLeanPointOfView.bookmark = bookmark;
                     break;
                 }
                 index++;
                 bookmark = BASE_NAME + index;
             }
 
-            lsLeanPointOfView.Bookmark = bookmark;
+            lsLeanPointOfView.bookmark = bookmark;
             lsLeanPointOfView.transform.localScale = Vector3.one * 100f;
             lsLeanPointOfView.transform.localEulerAngles = new Vector3(90f, 0f, 0f);
             povGo.name += index;

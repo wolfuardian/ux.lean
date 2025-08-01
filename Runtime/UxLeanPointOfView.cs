@@ -14,7 +14,7 @@ namespace Eos.Ux.Lean
         [System.NonSerialized]
         public bool IsLinkModeEnabled = false;
 
-        public string Bookmark
+        public string bookmark
         {
             get => _bookmark;
             set => _bookmark = value;
@@ -27,7 +27,7 @@ namespace Eos.Ux.Lean
         private UxLeanCameraManager cachedLeanCameraManager => _leanCameraManager ??= FindObjectOfType<UxLeanCameraManager>();
         #endif
 
-        public PovSettings Settings => _settings;
+        public PovSettings settings => _settings;
 
         public static bool BookmarkExists(string baseBookmark)
         {
@@ -36,7 +36,7 @@ namespace Eos.Ux.Lean
             #else
             var povs = FindObjectsOfType<UxLeanPointOfView>();
             #endif
-            return povs.Any(pov => pov.Bookmark == baseBookmark);
+            return povs.Any(pov => pov.bookmark == baseBookmark);
         }
 
         #region ContextMenu

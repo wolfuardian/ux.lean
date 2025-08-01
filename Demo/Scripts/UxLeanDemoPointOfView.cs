@@ -33,10 +33,10 @@ namespace Eos.Ux.Lean.Demo
             if (_pointOfView1)
             {
                 _manager.SetCameraProperties(
-                    _pointOfView1.Settings._lookLocate,
-                    _pointOfView1.Settings._lookEulerAngle,
-                    _pointOfView1.Settings._lookDistance,
-                    _pointOfView1.Settings._lookZoom
+                    _pointOfView1.settings._lookLocate,
+                    _pointOfView1.settings._lookEulerAngle,
+                    _pointOfView1.settings._lookDistance,
+                    _pointOfView1.settings._lookZoom
                 );
             }
         }
@@ -46,10 +46,10 @@ namespace Eos.Ux.Lean.Demo
             if (_pointOfView2)
             {
                 _manager.SetCameraProperties(
-                    _pointOfView2.Settings._lookLocate,
-                    _pointOfView2.Settings._lookEulerAngle,
-                    _pointOfView2.Settings._lookDistance,
-                    _pointOfView2.Settings._lookZoom
+                    _pointOfView2.settings._lookLocate,
+                    _pointOfView2.settings._lookEulerAngle,
+                    _pointOfView2.settings._lookDistance,
+                    _pointOfView2.settings._lookZoom
                 );
             }
         }
@@ -59,10 +59,10 @@ namespace Eos.Ux.Lean.Demo
             if (_pointOfView3)
             {
                 _manager.SetCameraProperties(
-                    _pointOfView3.Settings._lookLocate,
-                    _pointOfView3.Settings._lookEulerAngle,
-                    _pointOfView3.Settings._lookDistance,
-                    _pointOfView3.Settings._lookZoom
+                    _pointOfView3.settings._lookLocate,
+                    _pointOfView3.settings._lookEulerAngle,
+                    _pointOfView3.settings._lookDistance,
+                    _pointOfView3.settings._lookZoom
                 );
             }
         }

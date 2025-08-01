@@ -101,10 +101,10 @@ namespace Eos.Ux.Lean
         public void SyncPointOfView(UxLeanPointOfView pov)
         {
             SetCameraProperties(
-                new Vector3(pov.Settings._lookLocate.x, pov.Settings._lookLocate.y, pov.Settings._lookLocate.z),
-                new Vector3(pov.Settings._lookEulerAngle.x, pov.Settings._lookEulerAngle.y, pov.Settings._lookEulerAngle.z),
-                pov.Settings._lookDistance,
-                pov.Settings._lookZoom
+                new Vector3(pov.settings._lookLocate.x, pov.settings._lookLocate.y, pov.settings._lookLocate.z),
+                new Vector3(pov.settings._lookEulerAngle.x, pov.settings._lookEulerAngle.y, pov.settings._lookEulerAngle.z),
+                pov.settings._lookDistance,
+                pov.settings._lookZoom
             );
         }
 
@@ -148,10 +148,10 @@ namespace Eos.Ux.Lean
 
         public void LookAtTarget(UxLeanPointOfView pov)
         {
-            _lookLocate = pov.Settings._lookLocate;
-            _lookDistance = pov.Settings._lookDistance;
-            _lookEulerAngle = pov.Settings._lookEulerAngle;
-            _lookZoom = pov.Settings._lookZoom;
+            _lookLocate = pov.settings._lookLocate;
+            _lookDistance = pov.settings._lookDistance;
+            _lookEulerAngle = pov.settings._lookEulerAngle;
+            _lookZoom = pov.settings._lookZoom;
             SetLookAtMode(true);
         }
 
