@@ -39,7 +39,7 @@ namespace Eos.Ux.Lean
 
         private void DrawLinkModePanel(UxLeanPointOfViewEditor self)
         {
-            if (self._leanPointOfView.LeanCameraManager == null)
+            if (self._leanPointOfView.leanCameraManager == null)
             {
                 GUI.backgroundColor = new Color(0.7f, 0.7f, 0.7f, 1f); // Light gray color for disabled button
                 EditorGUI.BeginDisabledGroup(true);

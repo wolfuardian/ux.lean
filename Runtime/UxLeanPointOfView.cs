@@ -20,6 +20,8 @@ namespace Eos.Ux.Lean
             set => _bookmark = value;
         }
 
+        public UxLeanCameraManager leanCameraManager => cachedLeanCameraManager;
+
         private UxLeanCameraManager _leanCameraManager;
         #if UNITY_2022_1_OR_NEWER
         private UxLeanCameraManager cachedLeanCameraManager => _leanCameraManager ??= FindAnyObjectByType<UxLeanCameraManager>();
