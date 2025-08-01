@@ -14,11 +14,7 @@ namespace Eos.Ux.Lean
         [System.NonSerialized]
         public bool IsLinkModeEnabled = false;
 
-        public string bookmark
-        {
-            get => _bookmark;
-            set => _bookmark = value;
-        }
+        public string bookmark { get => _bookmark; set => _bookmark = value; }
 
         public UxLeanCameraManager leanCameraManager => cachedLeanCameraManager;
 
