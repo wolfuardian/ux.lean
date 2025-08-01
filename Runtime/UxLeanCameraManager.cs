@@ -22,10 +22,10 @@ namespace Eos.Ux.Lean
         private Vector3 _lookEulerAngle = new Vector3(15f, -30f, 0f);
         private float _lookZoom = 50f;
 
-        private LeanCameraLocateSettings _storedLocateSettings = new LeanCameraLocateSettings();
-        private LeanCameraRotateSettings _storedRotateSettings = new LeanCameraRotateSettings();
-        private LeanCameraDollySettings _storedDollySettings = new LeanCameraDollySettings();
-        private LeanCameraZoomSettings _storedZoomSettings = new LeanCameraZoomSettings();
+        private readonly LeanCameraLocateSettings _storedLocateSettings = new LeanCameraLocateSettings();
+        private readonly LeanCameraRotateSettings _storedRotateSettings = new LeanCameraRotateSettings();
+        private readonly LeanCameraDollySettings _storedDollySettings = new LeanCameraDollySettings();
+        private readonly LeanCameraZoomSettings _storedZoomSettings = new LeanCameraZoomSettings();
 
         public UxLeanCameraLocate LeanCameraLocate { get => _uxLeanCameraLocate; set => _uxLeanCameraLocate = value; }
         public UxLeanCameraRotate LeanCameraRotate { get => _uxLeanCameraRotate; set => _uxLeanCameraRotate = value; }
