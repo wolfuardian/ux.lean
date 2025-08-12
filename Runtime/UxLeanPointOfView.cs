@@ -111,7 +111,7 @@ namespace Eos.Ux.Lean
         {
             var forward  = transform.rotation * Vector3.forward;
             var clampedY = Mathf.Clamp(forward.y, -1f, 1f);
-            var yaw      = Mathf.Atan2(forward.x, forward.z) * Mathf.Rad2Deg;
+            var yaw      = Mathf.Atan2(forward.x, forward.z) * Mathf.Rad2Deg + 180f;
             var pitch    = -Mathf.Asin(clampedY) * Mathf.Rad2Deg;
             _settings._lookEulerAngle = new Vector3(pitch, yaw, 0f);
         }
