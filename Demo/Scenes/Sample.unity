@@ -316,7 +316,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bookmark: POV1
-  _leanCameraManager: {fileID: 2004499551}
   _settings:
     _bookmark: POV1
     _lookLocate: {x: 0, y: 0, z: 0}
@@ -368,7 +367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bookmark: POV1
-  _leanCameraManager: {fileID: 0}
   _settings:
     _bookmark: POV1
     _lookLocate: {x: 0, y: 0, z: 0}
@@ -689,7 +687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bookmark: POV1
-  _leanCameraManager: {fileID: 0}
   _settings:
     _bookmark: POV1
     _lookLocate: {x: 0, y: 0, z: 0}
@@ -909,12 +906,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04f2a7776224bc0a368fe81f6bd0eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lsLeanCameraLocate: {fileID: 2087700574}
-  _lsLeanCameraRotate: {fileID: 774515840}
-  _lsLeanCameraDolly: {fileID: 143945003}
-  _lsLeanCameraZoom: {fileID: 40015343}
+  _uxLeanCameraLocate: {fileID: 2087700574}
+  _uxLeanCameraRotate: {fileID: 774515840}
+  _uxLeanCameraDolly: {fileID: 143945003}
+  _uxLeanCameraZoom: {fileID: 40015343}
   _camera: {fileID: 40015341}
-  _lsLeanPointOfViewOnStart: {fileID: 0}
+  _uxLeanPointOfViewOnStart: {fileID: 0}
 --- !u!4 &2004499552
 Transform:
   m_ObjectHideFlags: 0

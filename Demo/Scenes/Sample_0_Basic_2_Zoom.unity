@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04f2a7776224bc0a368fe81f6bd0eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lsLeanCameraLocate: {fileID: 1302479856}
-  _lsLeanCameraRotate: {fileID: 738550099}
-  _lsLeanCameraDolly: {fileID: 1458365022}
-  _lsLeanCameraZoom: {fileID: 1090908541}
+  _uxLeanCameraLocate: {fileID: 1302479856}
+  _uxLeanCameraRotate: {fileID: 738550099}
+  _uxLeanCameraDolly: {fileID: 1458365022}
+  _uxLeanCameraZoom: {fileID: 1090908541}
   _camera: {fileID: 1090908539}
-  _lsLeanPointOfViewOnStart: {fileID: 0}
+  _uxLeanPointOfViewOnStart: {fileID: 0}
 --- !u!4 &71292314
 Transform:
   m_ObjectHideFlags: 0
